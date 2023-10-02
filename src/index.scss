@@ -1,0 +1,19 @@
+* {
+  font-family: serif;
+}
+
+.feedList-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  & h3 {
+    margin: 0;
+  }
+  & img {
+    border-radius: 15px;
+  }
+}
+
+h2 {
+  margin: auto;
+}
