@@ -4,7 +4,14 @@ import React from "react";
 export const FeedList = ({ node }) => {
   const lastUpdate = new Date(node.last_update);
 
-  console.log(node);
+  function formatTime(timeString) {
+    const [hourString, minute] = timeString.split(":");
+    const hour = +hourString % 24;
+    return (hour % 12 || 12) + ":" + minute + (hour < 12 ? "AM" : "PM");
+  }
+
+  const time = `${lastUpdate.toDateString().slice(3)} ` + formatTime(lastUpdate.toLocaleTimeString());
+
   return (
     <div className="feedList-container">
       <Paper
@@ -16,6 +23,7 @@ export const FeedList = ({ node }) => {
           width: "20%",
           height: 128,
           borderRadius: "15px",
+          backgroundColor: "#fff0",
         }}
       >
         <img src={node.field_photo_image_section} height="100%" width="100%" />
@@ -32,7 +40,7 @@ export const FeedList = ({ node }) => {
         }}
       >
         <h3>{node.title}</h3>
-        <p>{`${lastUpdate}`}</p>
+        <p>{`${time} IST`}</p>
       </Paper>
     </div>
   );
