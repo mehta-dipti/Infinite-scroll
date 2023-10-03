@@ -26,7 +26,7 @@ export const FeedList = ({ node }) => {
           backgroundColor: "#fff0",
         }}
       >
-        <img src={node.field_photo_image_section} height="100%" width="100%" />
+        <img src={node.field_photo_image_section} height="100%" width="100%" alt={node.title} />
       </Paper>
       <Paper
         elevation={0}
